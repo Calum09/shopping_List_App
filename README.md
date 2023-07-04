@@ -1,6 +1,6 @@
 # Shopping List App
 
-A shopping list tracker to keep everything in one place
+A shopping list tracker to keep your groceries all in one place
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3963406f-9d61-4802-a2e9-08230aa279c8/deploy-status)](https://app.netlify.com/sites/shopping-list-calumlav/deploys)
 
