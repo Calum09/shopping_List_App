@@ -6,6 +6,8 @@ A shopping list tracker to keep your groceries all in one place
 
 Try is out here: https://shopping-list-calumlav.netlify.app/
 
+<img width="428" alt="Shopping-List-App" src="https://github.com/Calum09/shopping_List_App/assets/111386433/4bdd7fd3-0cb4-4727-86fa-8e57ecb1df4d">
+
 ## Tools & Tech
 
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
