@@ -70,3 +70,7 @@ ul li:hover {
   background-color: #ffecc7;
   cursor: pointer;
 }
+
+#clear-button {
+  margin-top: 750px;
+}

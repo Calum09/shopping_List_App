@@ -20,6 +20,7 @@ const shoppingListInDB = ref(database, "shoppingList");
 
 const inputField = document.getElementById("input-field");
 const addButton = document.getElementById("add-button");
+const clearButton = document.getElementById("clear-button");
 const shoppingList = document.getElementById("shopping-list");
 const tooltip = document.getElementById("tooltip");
 
@@ -36,13 +37,17 @@ inputField.addEventListener("keydown", function (event) {
   // Check if the Enter key was pressed
   if (event.key === "Enter") {
     // Your action here
-    alert("Enter key pressed! Do something...");
     let inputValue = inputField.value;
 
     push(shoppingListInDB, inputValue); // Add the input value to the database
     tooltip.innerHTML = "Double click an item to remove it";
     clearInputField();
   }
+});
+
+// On button click call this function
+clearButton.addEventListener("click", function () {
+  clearShoppingList();
 });
 
 // Using the firebase function 'onValue' to grab the snapshot of an item added to the database and append that item to the list in the browser
