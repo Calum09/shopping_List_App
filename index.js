@@ -71,6 +71,7 @@ onValue(shoppingListInDB, function (snapshot) {
     }
   } else {
     shoppingList.innerHTML = "No items here... yet"; // Display this message when there's no items in the shopping list
+    tooltip.inneHTML = "";
   }
 });
 
