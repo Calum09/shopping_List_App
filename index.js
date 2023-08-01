@@ -40,7 +40,6 @@ inputField.addEventListener("keydown", function (event) {
     let inputValue = inputField.value;
 
     push(shoppingListInDB, inputValue); // Add the input value to the database
-    tooltip.innerHTML = "Double click an item to remove it";
     clearInputField();
   }
 });
@@ -58,6 +57,7 @@ onValue(shoppingListInDB, function (snapshot) {
     let itemsArray = Object.entries(snapshot.val()); // convert list of objects to an array
 
     clearShoppingList();
+    tooltip.innerHTML = "Double click an item to remove it";
 
     // Looping through each item in the database
     for (let i = 0; i < itemsArray.length; i++) {
