@@ -46,7 +46,9 @@ inputField.addEventListener("keydown", function (event) {
 
 // On button click call this function
 clearButton.addEventListener("click", function () {
-  clearShoppingList();
+  let itemsInDB = ref(database, `shoppingList/`);
+
+  remove(itemsInDB);
 });
 
 // Using the firebase function 'onValue' to grab the snapshot of an item added to the database and append that item to the list in the browser
@@ -57,7 +59,6 @@ onValue(shoppingListInDB, function (snapshot) {
     let itemsArray = Object.entries(snapshot.val()); // convert list of objects to an array
 
     clearShoppingList();
-    tooltip.innerHTML = "Double click an item to remove it";
 
     // Looping through each item in the database
     for (let i = 0; i < itemsArray.length; i++) {
@@ -68,22 +69,28 @@ onValue(shoppingListInDB, function (snapshot) {
 
       // Add the current item to the list
       addItemToShoppingList(currentItem);
+      tooltip.innerHTML = "Double click an item to remove it";
     }
   } else {
     shoppingList.innerHTML = "No items here... yet"; // Display this message when there's no items in the shopping list
-    tooltip.inneHTML = "";
+    tooltip.innerHTML = "";
   }
 });
 
+// Clear tooltip
+const clearTooltip = () => {
+  tooltip.innerHTML = "";
+};
+
 // Clear items from the list
-function clearShoppingList() {
+const clearShoppingList = () => {
   shoppingList.innerHTML = "";
-}
+};
 
 // Clear the input value after pressing the button
-function clearInputField() {
+const clearInputField = () => {
   inputField.value = "";
-}
+};
 
 // Add items from the input into the list
 function addItemToShoppingList(item) {
